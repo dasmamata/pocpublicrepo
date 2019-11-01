@@ -19,7 +19,7 @@ spring:
       ddl-auto: update
 ---
 spring:
-  profiles: gcp-mysql
+  profiles: poc-mysql
   gcpdatasource: 
     driverClassName: com.mysql.jdbc.Driver
     jdbcUrl: "jdbc:mysql://localhost:3306/test"
