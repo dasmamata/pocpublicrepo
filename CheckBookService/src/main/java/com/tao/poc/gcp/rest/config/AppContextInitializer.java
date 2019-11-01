@@ -24,8 +24,7 @@ import com.tao.poc.gcp.rest.utils.AppSpringProfile;
 public class AppContextInitializer 
 {
 	@Bean
-	@ConditionalOnExpression("'${ACTIVE_PROFILE}'.equals('local')"
-			+ " or '${ACTIVE_PROFILE}'.equals('gcp-redis')")
+	@ConditionalOnExpression("'${ACTIVE_PROFILE}'.equals('local')")
 	@ConfigurationProperties(prefix = "spring.localdatasource")
 	DataSource localDatasource() {
 		System.out.println("building localDatasource");
@@ -33,7 +32,7 @@ public class AppContextInitializer
 	}
 	
 	@Bean
-	@ConditionalOnProperty(name = {"ACTIVE_PROFILE"}, havingValue = AppSpringProfile.GCP)
+	@ConditionalOnProperty(name = {"ACTIVE_PROFILE"}, havingValue = AppSpringProfile.POC)
 	@ConfigurationProperties(prefix = "spring.gcpdatasource")
 	DataSource gcpDatasource() {
 		System.out.println("building gcpDatasource");
