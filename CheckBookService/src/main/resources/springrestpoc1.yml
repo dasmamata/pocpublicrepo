@@ -21,7 +21,7 @@ spring:
 spring:
   profiles: poc-mysql
   gcpdatasource: 
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     jdbcUrl: "jdbc:mysql://some-mysql1:33060/test"
     password: "root"
     username: "root"
