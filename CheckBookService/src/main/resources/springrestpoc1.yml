@@ -22,7 +22,7 @@ spring:
   profiles: poc-mysql
   gcpdatasource: 
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbcUrl: "jdbc:mysql://some-mysql2:33060/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT"
+    jdbcUrl: "jdbc:mysql://mysql:3306/test"
     password: "root"
     username: "root"
     testOnBorrow: true
@@ -33,7 +33,7 @@ spring:
     max-idle: 10
     max-wait: 8000
   jpa:
-    database-platform: "org.hibernate.dialect.MySQL8Dialect"
+    database-platform: "org.hibernate.dialect.MySQL5InnoDBDialect"
     properties:
       hibernate:
         show_sql: true
