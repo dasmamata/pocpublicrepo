@@ -1,0 +1,52 @@
+buildscript {
+repositories { 
+   mavenCentral()
+   jcenter()
+}
+
+dependencies {
+  classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+ }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+  springBootVersion = "2.0.5.RELEASE"
+  springVersion = "5.1.7.RELEASE"
+  
+  if(!project.hasProperty('ACTIVE_PROFILE')) {
+  	ACT_PROFILE = 'local'
+  }
+  else {
+  	ACT_PROFILE = ACTIVE_PROFILE
+  }
+}
+
+repositories { 
+   mavenCentral()
+}
+
+configurations.all {
+	exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+	//exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+}
+
+dependencies {
+  // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+  compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+  compile (group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: "${springBootVersion}")  
+  compile (group: 'org.springframework.boot', name: 'spring-boot-starter-data-rest', version: "${springBootVersion}")
+  compile (group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "2.9.9")
+  compile group: 'com.h2database', name: 'h2', version: '1.4.197'
+}
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
