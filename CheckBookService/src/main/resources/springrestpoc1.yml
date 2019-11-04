@@ -22,7 +22,7 @@ spring:
   profiles: poc-mysql
   gcpdatasource: 
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbcUrl: "jdbc:mysql://${HOSTIP}:${HOSTPORT}/test"
+    jdbcUrl: "jdbc:mysql://${DBHOSTIP}:${DBHOSTPORT}/${DBSCHEMANAME}"
     password: "root"
     username: "root"
     testOnBorrow: true
