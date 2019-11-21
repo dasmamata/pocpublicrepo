@@ -15,7 +15,7 @@ public class CardAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long accountNumber;
+    private int accountNumber;
     
     @Column(name = "EXPIRY_DATE", nullable = true)
     private Date noOfChecks;
@@ -23,7 +23,7 @@ public class CardAccount {
     @Column(name = "NAME", nullable = false)
     private String name;
 
-	public Long getAccountNumber() {
+	public int getAccountNumber() {
 		return accountNumber;
 	}
 
