@@ -39,8 +39,8 @@ public class BankRequestController {
 
 		try {
 			HttpEntity<CardAccount> response = template.exchange(accurl + "/" + request.getAccountNo(),
-					HttpMethod.POST, null,
-					CardAccount.class);
+					HttpMethod.GET,
+					null, CardAccount.class, "");
 			resultString = response.getBody();
 			headers = response.getHeaders();
 		}

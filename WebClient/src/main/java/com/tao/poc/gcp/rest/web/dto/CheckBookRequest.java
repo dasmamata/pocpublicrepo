@@ -2,28 +2,28 @@ package com.tao.poc.gcp.rest.web.dto;
 
 public class CheckBookRequest {
 
-	private Long accountNo;
-	private Integer checkBookCount;
-	private Integer checkBookPages;
+	private Long accountNumber;
+	private Integer noOfChecks;
+	private Integer noOfCheckBooks;
 	private String notes;
-
-	public Long getAccountNo() {
-		return accountNo;
+	
+	public Long getAccountNumber() {
+		return accountNumber;
 	}
-	public void setAccountNo(Long accountNo) {
-		this.accountNo = accountNo;
+	public void setAccountNumber(Long accountNumber) {
+		this.accountNumber = accountNumber;
 	}
-	public Integer getCheckBookCount() {
-		return checkBookCount;
+	public Integer getNoOfChecks() {
+		return noOfChecks;
 	}
-	public void setCheckBookCount(Integer checkBookCount) {
-		this.checkBookCount = checkBookCount;
+	public void setNoOfChecks(Integer noOfChecks) {
+		this.noOfChecks = noOfChecks;
 	}
-	public Integer getCheckBookPages() {
-		return checkBookPages;
+	public Integer getNoOfCheckBooks() {
+		return noOfCheckBooks;
 	}
-	public void setCheckBookPages(Integer checkBookPages) {
-		this.checkBookPages = checkBookPages;
+	public void setNoOfCheckBooks(Integer noOfCheckBooks) {
+		this.noOfCheckBooks = noOfCheckBooks;
 	}
 	public String getNotes() {
 		return notes;
