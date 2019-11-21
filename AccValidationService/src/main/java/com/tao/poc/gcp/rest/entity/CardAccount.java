@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class CardAccount {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ACC_NBR", nullable = false)
     private int accountNumber;
     
     @Column(name = "EXPIRY_DATE", nullable = true)
