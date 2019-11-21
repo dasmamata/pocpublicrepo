@@ -4,17 +4,17 @@ import java.sql.Date;
 
 public class CardAccount {
 
-    private Long accountNumber;
+    private int accountNumber;
 
     private Date expiryDate;
 
     private String name;
 
-	public Long getAccountNumber() {
+	public int getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(Long accountNumber) {
+	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 

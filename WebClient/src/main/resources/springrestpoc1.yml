@@ -5,7 +5,7 @@ spring:
     checkbookrequest: "http://${CHKSERVICEHOST}:${CHKSERVICEPORT}/customerrequest"
 ---
 spring:
-  profiles: poc-mysql
+  profiles: poc-cloud
   webservices:
     accountvalidation: "http://${ACCSERVICEHOST}:${ACCSERVICEPORT}/accvalidationrequest" 
     checkbookrequest: "http://${CHKSERVICEHOST}:${CHKSERVICEPORT}/customerrequest"

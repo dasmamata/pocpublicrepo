@@ -38,7 +38,7 @@ public class BankRequestController {
 		HttpHeaders headers;
 
 		try {
-			HttpEntity<CardAccount> response = template.exchange(accurl + "/" + request.getAccountNo(),
+			HttpEntity<CardAccount> response = template.exchange(accurl + "/" + request.getAccountNumber(),
 					HttpMethod.GET,
 					null, CardAccount.class, "");
 			resultString = response.getBody();
@@ -46,11 +46,13 @@ public class BankRequestController {
 		}
 		catch (RestClientException re) {
 			status.setStatus("Wrong Account Number");
+			return status;
 		}
 
 		try {
 			HttpEntity<String> resp = template.postForEntity(checkurl,request,
 					String.class, "" );
+			status.setStatus("Done");
 		}
 		catch (RestClientException re) {
 			status.setStatus("Could not create request");

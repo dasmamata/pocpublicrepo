@@ -12,10 +12,10 @@ $('#submitRequest').click(function(){
 		event.preventDefault();
 	});
 	var formData = {
-			accountNo : $("#accountNo").val(),
-			checkBookCount :  $("#checkBookCount").val(),
+			accountNumber : $("#accountNumber").val(),
+			noOfCheckBooks :  $("#noOfCheckBooks").val(),
 			notes : $("#notes").val(),
-			checkBookPages :  $("#checkBookPages").val()
+			noOfChecks :  $("#noOfChecks").val()
 	      }
 	
 	$.ajax({
@@ -46,14 +46,15 @@ $('#submitRequest').click(function(){
 <body>
 <form method="post" name="pocform" action="/createrequest">
 <p>Enter Account No.
-<input type="text" value="" id="accountNo" name="accountNo"></p>
+<input type="text" value="" id="accountNumber" name="accountNumber"></p>
 <p>No. of Check Books
-<input type="text" value="" id="checkBookCount" name="checkBookCount"></p>
+<input type="text" value="" id="noOfCheckBooks" name="noOfCheckBooks"></p>
 <p>Check book pages
-<input type="text" value="" id="checkBookPages" name="checkBookPages"></p>
+<input type="text" value="" id="noOfChecks" name="noOfChecks"></p>
 <p>Notes:
 <input type="text" value="New Check Book Request" id="notes" name="notes"></p>
 <p><input type="button" value="Submit Request" id="submitRequest" name="submitRequest"></p>
 </form>
+<div id="postResultDiv"></div>
 </body>
 </html>
