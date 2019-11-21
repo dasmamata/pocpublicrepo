@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create Request/Validate Account</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type = "text/javascript">
+$(document).ready(function() {
+$('#submitRequest').click(function(){
+
+	$("#pocform").submit(function(event) {
+		event.preventDefault();
+	});
+	var formData = {
+			accountNo : $("#accountNo").val(),
+			checkBookCount :  $("#checkBookCount").val(),
+			notes : $("#notes").val(),
+			checkBookPages :  $("#checkBookPages").val()
+	      }
+	
+	$.ajax({
+		  url : location.origin + "/createrequest",
+	      type : "POST",
+	      contentType : "application/json",
+	      data : JSON.stringify(formData),
+	      dataType : 'json',
+	      success : function(result) {
+	        if(result.status == "Done"){
+	          $("#postResultDiv").html("<p style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px'>" + 
+	                        "Post Successfully! <br></p>");
+	        }else{
+	          $("#postResultDiv").html("<strong>Error</strong>");
+	        }
+	        console.log(result);
+	      },
+	      error : function(e) {
+	        alert("Error!")
+	        console.log("ERROR: ", e);
+	      }
+	    });
+
+});
+});
+      </script>
+</head>
+<body>
+<form method="post" name="pocform" action="/createrequest">
+<p>Enter Account No.
+<input type="text" value="" id="accountNo" name="accountNo"></p>
+<p>No. of Check Books
+<input type="text" value="" id="checkBookCount" name="checkBookCount"></p>
+<p>Check book pages
+<input type="text" value="" id="checkBookPages" name="checkBookPages"></p>
+<p>Notes:
+<input type="text" value="New Check Book Request" id="notes" name="notes"></p>
+<p><input type="button" value="Submit Request" id="submitRequest" name="submitRequest"></p>
+</form>
+</body>
+</html>

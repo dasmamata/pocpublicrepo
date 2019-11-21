@@ -1,0 +1,12 @@
+spring:
+  profiles: local
+  webservices:
+    accountvalidation: "http://${ACCSERVICEHOST}:${ACCSERVICEPORT}/accvalidationrequest" 
+    checkbookrequest: "http://${CHKSERVICEHOST}:${CHKSERVICEPORT}/customerrequest"
+---
+spring:
+  profiles: poc-mysql
+  webservices:
+    accountvalidation: "http://${ACCSERVICEHOST}:${ACCSERVICEPORT}/accvalidationrequest" 
+    checkbookrequest: "http://${CHKSERVICEHOST}:${CHKSERVICEPORT}/customerrequest"
+---
