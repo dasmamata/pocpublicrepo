@@ -15,14 +15,35 @@ public class CardAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int accNo;
-    
-    @Column(name = "ACCNT_NBR", nullable = false)
     private Long accountNumber;
-
-    @Column(name = "EXPIRY_DATE", nullable = false)
+    
+    @Column(name = "EXPIRY_DATE", nullable = true)
     private Date noOfChecks;
 
     @Column(name = "NAME", nullable = false)
     private String name;
+
+	public Long getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(Long accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public Date getNoOfChecks() {
+		return noOfChecks;
+	}
+
+	public void setNoOfChecks(Date noOfChecks) {
+		this.noOfChecks = noOfChecks;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }
