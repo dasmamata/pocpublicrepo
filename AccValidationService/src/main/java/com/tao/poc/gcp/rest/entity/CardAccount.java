@@ -18,7 +18,7 @@ public class CardAccount {
     private int accountNumber;
     
     @Column(name = "EXPIRY_DATE", nullable = true)
-    private Date noOfChecks;
+    private Date expiryDate;
 
     @Column(name = "NAME", nullable = false)
     private String name;
